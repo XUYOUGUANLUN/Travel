@@ -157,28 +157,53 @@ footer {
     font-weight: bold;
 }
 
-/* ------------------- 手機模板調整 ------------------- */
+/* ------------------- 手機模板（滿版 APP 風格） ------------------- */
 @media (max-width: 768px) {
+    body {
+        margin: 0;
+    }
+
+    header, footer, main, nav, .feature-buttons a.button, .feature-desc p, table {
+        width: 100%;           /* 滿版 */
+        max-width: 100%;
+        border-radius: 0;      /* 去掉圓角 */
+    }
+
+    header {
+        padding: 1rem;
+    }
+
     header h1 {
         font-size: 1.3rem;
     }
 
     nav {
         flex-direction: column;
+        gap: 0;
     }
 
     nav a {
-        flex: 1;
-        text-align: center;
-    }
-
-    main {
+        border-radius: 0;
         padding: 1rem;
     }
 
-    /* 常用功能改上下排 */
+    main {
+        padding: 0;   /* 去掉桌機的空白邊距 */
+    }
+
+    /* 常用功能上下排 + 滿版清單 */
     .feature-container {
         flex-direction: column;
+    }
+
+    .feature-buttons a.button {
+        margin: 0;
+        border-bottom: 1px solid #cce6ff;
+    }
+
+    .feature-desc p {
+        margin: 0;
+        border-bottom: 1px solid #cce6ff;
     }
 
     /* 表格可滑動 */
