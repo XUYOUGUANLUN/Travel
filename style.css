@@ -1,55 +1,88 @@
-/* ------------------- 全域設定 ------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Noto Sans TC", sans-serif;
-}
-
+/* ------------------- 全域樣式 ------------------- */
 body {
-    line-height: 1.6;
-    background-color: #e6f0fa; /* 淺藍底色 */
-    color: #333;
+    margin: 0;
+    font-family: "Microsoft JhengHei", sans-serif;
+    background-color: #f0f8ff; /* 淺藍底色 */
+    color: #003366;
 }
 
-header, footer {
-    background-color: #3399cc; /* 主導航深藍 */
-    color: white;
+h1, h2 {
+    margin-top: 0;
+    color: #003366;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ------------------- 頂部 Header ------------------- */
+header {
+    background-color: #66b2ff;
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header h1, footer p {
-    margin: 0.5rem 0;
+header h1 {
+    margin: 0 0 0.5rem;
 }
 
-/* ------------------- 導覽列按鈕 ------------------- */
 nav {
-    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 nav a {
-    display: inline-block;
-    margin: 0.3rem;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background-color: #66b2ff; /* 按鈕淺藍 */
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #004080;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #3399cc; /* 深藍 hover */
-    color: #ffd966; /* 黃色字體 */
+    background-color: #0059b3;
 }
 
-/* ------------------- 主要內容 ------------------- */
+/* ------------------- 主內容 ------------------- */
 main {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 2rem;
+}
+
+/* ------------------- 常用功能左右分欄 ------------------- */
+.feature-container {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-buttons, .feature-desc {
+    flex: 1 1 300px;
+}
+
+.feature-buttons a.button {
+    display: block;
+    background-color: #004080;
+    color: #fff;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.feature-buttons a.button:hover {
+    background-color: #0059b3;
+}
+
+.feature-desc p {
+    background-color: #e6f7ff;
+    padding: 0.8rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
 }
 
 /* ------------------- 行程表格 ------------------- */
@@ -60,7 +93,7 @@ main {
     background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .trip-table th, .trip-table td {
@@ -83,76 +116,7 @@ main {
     border-bottom: none;
 }
 
-/* ------------------- 住宿列表 ------------------- */
-.accommodation li {
-    background-color: #ffffff;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* ------------------- 表單元素美化 ------------------- */
-input, select, button {
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-}
-
-button {
-    background-color: #3399cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2673a3;
-}
-
-/* ------------------- 響應式設計 ------------------- */
-@media (max-width: 600px) {
-    nav a {
-        display: block;
-        margin: 0.3rem 0;
-    }
-
-    main {
-        padding: 0 0.5rem;
-    }
-
-    .trip-table th, .trip-table td {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
-
-    .trip-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-}
-/* ------------------- 主內容 a 按鈕 ------------------- */
-a.button {
-    display: inline-block;
-    margin: 0.3rem 0.5rem;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    background-color: #66b2ff;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-a.button:hover {
-    background-color: #3399cc;
-    color: #ffd966;
-}
-/* ------------------- 住宿表格美化 ------------------- */
+/* ------------------- 住宿表格 ------------------- */
 .accommodation-table {
     width: 100%;
     border-collapse: collapse;
@@ -183,39 +147,49 @@ a.button:hover {
     border-bottom: none;
 }
 
-/* 響應式 */
-@media (max-width: 600px) {
-    .accommodation-table {
+/* ------------------- 頁尾 ------------------- */
+footer {
+    background-color: #66b2ff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #003366;
+    font-weight: bold;
+}
+
+/* ------------------- 手機模板調整 ------------------- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        flex: 1;
+        text-align: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    /* 常用功能改上下排 */
+    .feature-container {
+        flex-direction: column;
+    }
+
+    /* 表格可滑動 */
+    table {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    .accommodation-table th, .accommodation-table td {
+    table th, table td {
         padding: 0.5rem;
         font-size: 0.9rem;
     }
-}
-/* ------------------- 常用功能左右分欄 ------------------- */
-.feature-container {
-    display: flex;
-    gap: 2rem; /* 左右欄間距 */
-    margin-bottom: 2rem;
-    flex-wrap: wrap; /* 手機寬度自動換行 */
-}
-
-.feature-buttons, .feature-desc {
-    flex: 1 1 300px; /* 最小寬度300px，自動伸縮 */
-}
-
-.feature-buttons a.button {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.feature-desc p {
-    background-color: #e6f7ff;
-    padding: 0.8rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
 }
