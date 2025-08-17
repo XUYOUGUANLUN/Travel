@@ -1,220 +1,132 @@
-/* ------------------- 全域樣式 ------------------- */
+/* ------------------- 全域 ------------------- */
 body {
     margin: 0;
     font-family: "Microsoft JhengHei", sans-serif;
-    background-color: #f0f8ff; /* 淺藍底色 */
-    color: #003366;
+    background-color: #e6f2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-h1, h2 {
-    margin-top: 0;
-    color: #003366;
+/* ------------------- APP 外框 ------------------- */
+.app-container {
+    width: 390px;        /* iPhone 15 寬度 */
+    min-height: 844px;   /* iPhone 15 高度 */
+    background: #fdfefe;
+    border-radius: 30px;
+    box-shadow: 0 4px 25px rgba(0,0,0,0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem; /* 整體往下移 */
 }
 
-a {
-    text-decoration: none;
-}
-
-/* ------------------- 頂部 Header ------------------- */
+/* ------------------- Header ------------------- */
 header {
-    background-color: #66b2ff;
-    padding: 1rem;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 1.2rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-top: 1rem; /* 標題列往下移一行 */
 }
 
 header h1 {
-    margin: 0 0 0.5rem;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: space-around;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 20px;
+    margin-top: 0.6rem;
+    overflow: hidden;
 }
 
 nav a {
-    background-color: #004080;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    transition: background-color 0.3s;
+    flex: 1;
+    padding: 0.8rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background 0.3s;
 }
 
 nav a:hover {
-    background-color: #0059b3;
+    background-color: rgba(255,255,255,0.2);
 }
 
-/* ------------------- 主內容 ------------------- */
+/* ------------------- 內容 ------------------- */
 main {
-    padding: 2rem;
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
 }
 
-/* ------------------- 常用功能左右分欄 ------------------- */
-.feature-container {
+.section-title {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #003366;
+}
+
+/* ------------------- 功能清單 / 卡片 ------------------- */
+.app-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.menu-item {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.feature-buttons, .feature-desc {
-    flex: 1 1 300px;
-}
-
-.feature-buttons a.button {
-    display: block;
-    background-color: #004080;
-    color: #fff;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    transition: background-color 0.3s;
-}
-
-.feature-buttons a.button:hover {
-    background-color: #0059b3;
-}
-
-.feature-desc p {
-    background-color: #e6f7ff;
-    padding: 0.8rem;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-}
-
-/* ------------------- 行程表格 ------------------- */
-.trip-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.trip-table th, .trip-table td {
-    padding: 0.8rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid #cce6ff;
-}
-
-.trip-table th {
-    background-color: #66b2ff;
-    color: #003366;
-    font-weight: bold;
-}
-
-.trip-table tr:nth-child(even) {
-    background-color: #e6f7ff;
-}
-
-.trip-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* ------------------- 住宿表格 ------------------- */
-.accommodation-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 2rem;
-    background-color: #ffffff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.accommodation-table th, .accommodation-table td {
-    padding: 0.8rem 1rem;
-    text-align: center;
-    border-bottom: 1px solid #cce6ff;
-}
-
-.accommodation-table th {
-    background-color: #66b2ff;
-    color: #003366;
-    font-weight: bold;
-}
-
-.accommodation-table tr:nth-child(even) {
-    background-color: #e6f7ff;
-}
-
-.accommodation-table tr:last-child td {
-    border-bottom: none;
-}
-
-/* ------------------- 頁尾 ------------------- */
-footer {
-    background-color: #66b2ff;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
-    margin-top: 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
     color: #003366;
     font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* ------------------- 手機模板（滿版 APP 風格） ------------------- */
-@media (max-width: 768px) {
-    body {
-        margin: 0;
-    }
+.menu-item span {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
 
-    header, footer, main, nav, .feature-buttons a.button, .feature-desc p, table {
-        width: 100%;           /* 滿版 */
-        max-width: 100%;
-        border-radius: 0;      /* 去掉圓角 */
-    }
+.menu-item small {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: normal;
+}
 
-    header {
-        padding: 1rem;
-    }
+.menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    background: #f0faff;
+}
 
-    header h1 {
-        font-size: 1.3rem;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    nav a {
-        border-radius: 0;
-        padding: 1rem;
-    }
-
-    main {
-        padding: 0;   /* 去掉桌機的空白邊距 */
-    }
-
-    /* 常用功能上下排 + 滿版清單 */
-    .feature-container {
-        flex-direction: column;
-    }
-
-    .feature-buttons a.button {
-        margin: 0;
-        border-bottom: 1px solid #cce6ff;
-    }
-
-    .feature-desc p {
-        margin: 0;
-        border-bottom: 1px solid #cce6ff;
-    }
-
-    /* 表格可滑動 */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    table th, table td {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
+/* ------------------- Footer ------------------- */
+footer {
+    background-color: #4facfe;
+    text-align: center;
+    padding: 0.8rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: sticky;
+    bottom: 0;
 }

@@ -6,36 +6,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>歡迎來到Passion出遊系統</h1>
-        <nav>
-            <a href="index.html">首頁</a>
-            <a href="trips.html">所有行程列表</a>
-            <a href="accommodation.html">住宿</a>
-        </nav>
-    </header>
+    <div class="app-container">
+        <header>
+            <h1>Passion 出遊系統</h1>
+            <nav>
+                <a href="index.html">首頁</a>
+                <a href="trips.html">行程</a>
+                <a href="accommodation.html">住宿</a>
+            </nav>
+        </header>
 
-    <main>
-    <h2>常用功能</h2>
-    <div class="feature-container">
-        <!-- 左邊按鈕區 -->
-        <div class="feature-buttons">
-            <a href="trips.html#trip1" class="button">上傳照片</a>
-            <a href="trips.html#trip2" class="button">資料修改</a>
-            <a href="trips.html#trip3" class="button">查看照片</a>
-        </div>
+        <main>
+            <h2 class="section-title">常用功能</h2>
+            <div class="app-menu">
+                <a href="trips.html#trip1" class="menu-item">
+                    <span>📷</span>
+                    上傳照片
+                    <small>將旅遊的美照上傳</small>
+                </a>
+                <a href="trips.html#trip2" class="menu-item">
+                    <span>✏️</span>
+                    資料修改
+                    <small>更新行程與資料</small>
+                </a>
+                <a href="trips.html#trip3" class="menu-item">
+                    <span>🖼️</span>
+                    查看照片
+                    <small>瀏覽回憶相簿</small>
+                </a>
+                <a href="accommodation.html" class="menu-item">
+                    <span>🏨</span>
+                    住宿資訊
+                    <small>查看住宿安排</small>
+                </a>
+            </div>
+        </main>
 
-        <!-- 右邊說明區 -->
-        <div class="feature-desc">
-            <p><strong>上傳照片：</strong>將您旅遊的精彩照片上傳到系統，方便分享與回顧。</p>
-            <p><strong>資料修改：</strong>修改您的個人資訊與行程相關資料，保持資訊最新。</p>
-            <p><strong>查看照片：</strong>瀏覽已上傳的照片，方便回顧您的旅遊回憶。</p>
-        </div>
+        <footer>
+            <p>&copy; 2025 茶寶寶專用出遊系統</p>
+        </footer>
     </div>
-</main>
-
-    <footer>
-        <p>&copy; 茶寶寶專用出遊系統</p>
-    </footer>
 </body>
 </html>
